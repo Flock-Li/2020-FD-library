@@ -5,11 +5,6 @@ import (
 )
 
 func TestRemovebook(t *testing.T) {
-	//var ISBN, reason string
-	// fmt.Println("please input the ISBN:")
-	// fmt.Scanln(&ISBN)
-	// fmt.Println("please input the reason:")
-	// fmt.Scanln(&reason)
 	err := lib.RemoveBook("50", "the book is lost")
 	if err != nil {
 		t.Errorf("can't remove book")
@@ -22,9 +17,6 @@ func TestRemovebook(t *testing.T) {
 }
 
 func TestAddAccount(t *testing.T) {
-	// var account string
-	// fmt.Println("please input the account:")
-	// fmt.Scanln(&account)
 	lib.AddAccount("s1")
 	err := lib.AddAccount("s2")
 	if err != nil {
@@ -34,9 +26,6 @@ func TestAddAccount(t *testing.T) {
 }
 
 func TestQueryByTitle(t *testing.T) {
-	// var title string
-	// fmt.Println("please input the title:")
-	// fmt.Scanln(&title)
 	err := lib.QueryByTitle("B2")
 	if err != nil {
 		t.Errorf("can't Query By Title")
@@ -45,9 +34,6 @@ func TestQueryByTitle(t *testing.T) {
 }
 
 func TestQueryByAuthor(t *testing.T) {
-	// var author string
-	// fmt.Println("please input the author:")
-	// fmt.Scanln(&author)
 	err := lib.QueryByAuthor("A1")
 	if err != nil {
 		t.Errorf("can't Query By Author")
@@ -56,9 +42,6 @@ func TestQueryByAuthor(t *testing.T) {
 }
 
 func TestQueryByISBN(t *testing.T) {
-	// var ISBN string
-	// fmt.Println("please input the ISBN:")
-	// fmt.Scanln(&ISBN)
 	err := lib.QueryByISBN("2")
 	if err != nil {
 		t.Errorf("can't Query By ISBN:2")
@@ -67,12 +50,6 @@ func TestQueryByISBN(t *testing.T) {
 }
 
 func TestBorrowBook(t *testing.T) {
-	//var account, ISBN string
-	// fmt.Println("please input the account:")
-	// fmt.Scanln(&account)
-	// fmt.Println("please input the ISBN:")
-	// fmt.Scanln(&ISBN)
-
 	lib.BorrowBook("s3", "4")
 	lib.BorrowBook("s1", "2")
 	lib.BorrowBook("s1", "4")
@@ -87,9 +64,6 @@ func TestBorrowBook(t *testing.T) {
 }
 
 func TestQueryHistory(t *testing.T) {
-	// var account string
-	// fmt.Println("please input the account:")
-	// fmt.Scanln(&account)
 	err := lib.QueryHistory("s1")
 	if err != nil {
 		t.Errorf("can't Query History")
@@ -98,9 +72,6 @@ func TestQueryHistory(t *testing.T) {
 }
 
 func TestQueryBookCon(t *testing.T) {
-	// var account string
-	// fmt.Println("please input the account:")
-	// fmt.Scanln(&account)
 	err := lib.QueryBookCon("s1")
 	if err != nil {
 		t.Errorf("can't Query BookCon")
@@ -109,9 +80,6 @@ func TestQueryBookCon(t *testing.T) {
 }
 
 func TestCheckDeadline(t *testing.T) {
-	// var ISBN string
-	// fmt.Println("please input the ISBN:")
-	// fmt.Scanln(&ISBN)
 	err := lib.CheckDeadline("4")
 	if err != nil {
 		t.Errorf("can't Check Deadline")
@@ -120,9 +88,6 @@ func TestCheckDeadline(t *testing.T) {
 }
 
 func TestExtendDeadline(t *testing.T) {
-	// var ISBN string
-	// fmt.Println("please input the ISBN:")
-	// fmt.Scanln(&ISBN)
 	lib.ExtendDeadline("4")
 	lib.ExtendDeadline("4")
 	lib.ExtendDeadline("4")
@@ -134,9 +99,6 @@ func TestExtendDeadline(t *testing.T) {
 }
 
 func TestCheckDue(t *testing.T) {
-	// var account string
-	// fmt.Println("please input the account:")
-	// fmt.Scanln(&account)
 	err := lib.CheckDue("s1")
 	if err != nil {
 		t.Errorf("can't Check Due")
@@ -145,11 +107,6 @@ func TestCheckDue(t *testing.T) {
 }
 
 func TestReturnBook(t *testing.T) {
-	// var account, ISBN string
-	// fmt.Println("please input the ISBN:")
-	// fmt.Scanln(&ISBN)
-	// fmt.Println("please input the account:")
-	// fmt.Scanln(&account)
 	err := lib.ReturnBook("4", "s1")
 	err = lib.ReturnBook("2", "s1")
 	if err != nil {
@@ -164,56 +121,16 @@ var lib = Library{}
 
 func TestMain(m *testing.M) {
 	books := []book{
-		book{
-			"B1",
-			"1",
-			"A1",
-		},
-		book{
-			"B2",
-			"2",
-			"A2",
-		},
-		book{
-			"B3",
-			"3",
-			"A3",
-		},
-		book{
-			"B4",
-			"4",
-			"A4",
-		},
-		book{
-			"B5",
-			"5",
-			"A5",
-		},
-		book{
-			"B6",
-			"6",
-			"A6",
-		},
-		book{
-			"B7",
-			"7",
-			"A7",
-		},
-		book{
-			"B8",
-			"8",
-			"A8",
-		},
-		book{
-			"B9",
-			"9",
-			"A9",
-		},
-		book{
-			"B10",
-			"10",
-			"A10",
-		},
+		book{"B1", "1", "A1"},
+		book{"B2", "2", "A2"},
+		book{"B3", "3", "A3"},
+		book{"B4", "4", "A4"},
+		book{"B5", "5", "A5"},
+		book{"B6", "6", "A6"},
+		book{"B7", "7", "A7"},
+		book{"B8", "8", "A8"},
+		book{"B9", "9", "A9"},
+		book{"B10", "10", "A10"},
 	}
 	lib.CreateDB()
 	lib.ConnectDB()

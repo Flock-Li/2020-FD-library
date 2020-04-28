@@ -377,7 +377,6 @@ func (lib *Library) QueryHistory(account string) error {
 		SELECT *
 		FROM lend
 		WHERE student_id="%s"
-		ORDER BY getdate
 	`, account)
 	rows, err := lib.db.Query(s)
 	if err != nil {
@@ -404,7 +403,6 @@ func (lib *Library) QueryBookCon(account string) error {
 		SELECT book_id
 		FROM lend
 		WHERE student_id='%s' AND ret=0
-		ORDER BY getdate
 	`, account)
 	rows, err := lib.db.Query(s)
 	if err != nil {
@@ -529,7 +527,6 @@ func (lib *Library) CheckDue(account string) error {
 		if Dead.Before(nowdate) {
 			fmt.Println(ISBN)
 		}
-		fmt.Println(ISBN)
 	}
 	if cnt == 0 {
 		fmt.Printf("the student %s has no overdue book", account)
