@@ -571,21 +571,21 @@ func (lib *Library) ReturnBook(ISBN, account string) error {
 
 // etc...
 
-func main() {
-	fmt.Println("Welcome to the Library Management System!")
-	var lib Library
-	lib.CreateDB()
-	lib.ConnectDB()
-	lib.CreateTables()
-	//	lib.AddBook("root", "T1", "A1", "1")
-	// books := []book{
-	// 	book{
-	// 		"B1",
-	// 		"1",
-	// 		"A1",
-	// 	},
-	// }
-	// lib.AddBooks("root", books)
-	// var book1 []book
-	// lib.AddBooks("root", book1)
-}
+// func main() {
+// 	fmt.Println("Welcome to the Library Management System!")
+// 	var lib Library
+// 	lib.CreateDB()
+// 	lib.ConnectDB()
+// 	lib.CreateTables()
+// 	//	lib.AddBook("root", "T1", "A1", "1")
+// 	// books := []book{
+// 	// 	book{
+// 	// 		"B1",
+// 	// 		"1",
+// 	// 		"A1",
+// 	// 	},
+// 	// }
+// 	// lib.AddBooks("root", books)
+// 	// var book1 []book
+// 	// lib.AddBooks("root", book1)
+// }
