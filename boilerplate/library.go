@@ -536,7 +536,7 @@ func (lib *Library) CheckDue(account string) error {
 
 //return a book to the library by a student account
 func (lib *Library) ReturnBook(ISBN, account string) error {
-	fmt.Printf("the student %s return the book %s\n", account, ISBN)
+
 	s := fmt.Sprintf(`
 		SELECT COUNT(*)
 		FROM lend
@@ -553,8 +553,9 @@ func (lib *Library) ReturnBook(ISBN, account string) error {
 		panic(err)
 	}
 	if cnt == 0 {
-		fmt.Printf("the student %s doesn't borrow the book %s", account, ISBN)
+		fmt.Printf("the student %s doesn't borrow the book %s,return invalid\n", account, ISBN)
 	} else {
+		fmt.Printf("the student %s return the book %s\n", account, ISBN)
 		s := fmt.Sprintf(`
 			UPDATE lend
 			SET ret=1

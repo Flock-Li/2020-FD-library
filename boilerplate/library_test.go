@@ -26,7 +26,7 @@ func TestAddAccount(t *testing.T) {
 }
 
 func TestQueryByTitle(t *testing.T) {
-	err := lib.QueryByTitle("B2")
+	err := lib.QueryByTitle("B3")
 	if err != nil {
 		t.Errorf("can't Query By Title")
 	}
@@ -42,7 +42,7 @@ func TestQueryByAuthor(t *testing.T) {
 }
 
 func TestQueryByISBN(t *testing.T) {
-	err := lib.QueryByISBN("2")
+	err := lib.QueryByISBN("3")
 	if err != nil {
 		t.Errorf("can't Query By ISBN:2")
 	}
@@ -56,7 +56,7 @@ func TestBorrowBook(t *testing.T) {
 	lib.BorrowBook("s1", "5")
 	lib.BorrowBook("s1", "6")
 	lib.BorrowBook("s2", "4")
-	err := lib.BorrowBook("s1", "2")
+	err := lib.BorrowBook("s1", "7")
 	if err != nil {
 		t.Errorf("can't Borrow Book")
 	}
@@ -108,7 +108,7 @@ func TestCheckDue(t *testing.T) {
 
 func TestReturnBook(t *testing.T) {
 	err := lib.ReturnBook("4", "s1")
-	err = lib.ReturnBook("2", "s1")
+	err = lib.ReturnBook("8", "s1")
 	if err != nil {
 		t.Errorf("can't Return Book")
 	}
