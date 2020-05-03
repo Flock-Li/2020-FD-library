@@ -11,9 +11,9 @@ import (
 )
 
 const (
-	User     = "root"
-	Password = "lrc2529130"
-	DBName   = "ass3"
+	User     = ""
+	Password = ""
+	DBName   = ""
 )
 
 type Library struct {
